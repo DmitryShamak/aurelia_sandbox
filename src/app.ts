@@ -9,10 +9,10 @@ export class App {
     config.options.pushState = true;
     config.options.root = '/';
     config.map([
-      { route: ['/', 'home'], name: 'home', moduleId: 'home/index' },
-      { route: '404', name: '404', moduleId: '404/index' },
-      { route: 'login', name: 'login', moduleId: 'login/index' },
-      { route: 'logout', moduleId: 'logout/index', nav: true, title: 'Logout' }
+      { route: ['/', 'home'], name: 'home', moduleId: 'resources/pages/home/index' },
+      { route: '404', name: '404', moduleId: 'resources/pages/404/index' },
+      { route: 'login', name: 'login', moduleId: 'resources/pages/login/index' },
+      { route: 'logout', moduleId: 'resources/pages/logout/index', nav: true, title: 'Logout' }
     ]);
 
     let handleUnknownRoutes = (instruction: NavigationInstruction) => {
