@@ -1,7 +1,11 @@
-<template class.bind="class" bindable="label, id, name, value, placeholder">
+<template class.bind="class + (errors && errors.length ? ' error' : '')" bindable="label, id, name, type, value, errors, placeholder">
   <label class="input-label" for.one-time="id">${label}</label>
 
-  <div>
-    <input class="input" id.onetime="id" name.one-time="name" value.two-way="value" placeholder.one-time="placeholder"/>
+  <div class="input-group">
+    <input type.one-time="type || 'text'" class="input" id.onetime="id" name.one-time="name" value.bind="value" placeholder.one-time="placeholder"/>
+
+    <div if.bind="errors && errors.length" data-tooltip-text.bind="errors[0].error.message" data-tooltip-position="right">
+      <div class="validation-icon"></div>
+    </div>
   </div>
 </template>

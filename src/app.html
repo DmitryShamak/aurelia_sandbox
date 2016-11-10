@@ -1,19 +1,8 @@
 <template>
   <require from="bootstrap/css/bootstrap.css"></require>
+  <require from="./resources/elements/navigation.html"></require>
 
-  <div class="navbar">
-    <div class="nav navbar-header">
-      <a class="navbar-brand" href="/">
-        <i class="fa fa-home"></i>
-        <span>${router.title}</span>
-      </a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li repeat.for="row of router.navigation" class="${row.isActive ? 'active' : ''}">
-        <a href.bind="row.href">${row.title}</a>
-      </li>
-    </ul>
-  </div>
+  <navigation links.bind="router.navigation" title.bind="router.title"></navigation>
 
   <router-view class="adform-ui-v2"></router-view>
 </template>

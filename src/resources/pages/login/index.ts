@@ -1,5 +1,6 @@
 import {inject, NewInstance} from 'aurelia-dependency-injection';
 import {ValidationRules, ValidationController} from "aurelia-validation";
+import {computedFrom} from "aurelia-framework";
 
 @inject(NewInstance.of(ValidationController))
 export class Login {
@@ -20,6 +21,7 @@ export class Login {
   }
 
   onSubmit() {
+    console.log(this.name);
     this.validator.validate().then(function(errors) {
       console.info(errors);
     })

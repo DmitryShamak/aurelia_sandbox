@@ -13,7 +13,8 @@ export function configure(aurelia: Aurelia) {
   aurelia.use
     .standardConfiguration()
     .feature('resources')
-    .plugin("aurelia-validation");
+    .plugin("aurelia-validation")
+    .globalResources("resources/elements/custom-input.html");
 
   if (environment.debug) {
     aurelia.use.developmentLogging();
