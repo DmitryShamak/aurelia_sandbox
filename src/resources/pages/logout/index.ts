@@ -1,16 +1,9 @@
-import {Router} from "aurelia-router";
-import {inject} from "aurelia-framework";
-
-@inject(Router)
 export class Logout {
-  router: Router;
   message: string = "Logout";
 
-  constructor(router: Router) {
-    this.router = router;
-  }
+  constructor() {}
 
-  activate() {
-    this.router.navigate("login");
+  activate(params, route, navigationInstruction) {
+    navigationInstruction.router.navigate("login");
   }
 }

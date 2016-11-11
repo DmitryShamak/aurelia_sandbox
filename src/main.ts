@@ -14,6 +14,7 @@ export function configure(aurelia: Aurelia) {
     .standardConfiguration()
     .feature('resources')
     .plugin("aurelia-validation")
+    .globalResources("resources/elements/navigation.html")
     .globalResources("resources/elements/custom-input.html");
 
   if (environment.debug) {

@@ -3,6 +3,8 @@ import {RouterConfiguration, NavigationInstruction, Redirect, Router} from 'aure
 export class App {
   router: Router;
 
+  constructor() { }
+
   configureRouter(config: RouterConfiguration, router: Router): void {
     this.router = router;
     config.title = 'Sandbox';
@@ -20,9 +22,5 @@ export class App {
     };
 
     config.mapUnknownRoutes(handleUnknownRoutes.bind(this, NavigationInstruction));
-  }
-
-  activate(options: Object): void {
-    console.log(options);
   }
 }

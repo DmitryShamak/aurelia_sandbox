@@ -1,7 +1,8 @@
 export class Home {
+  router;
   message: string = "Home";
 
-  barChartSettings: Object = {
-    data: [2, 3, 4, 10, 9, 1]
-  };
+  activate(params, route, navigationInstruction): void {
+    this.router =  navigationInstruction.router;
+  }
 }

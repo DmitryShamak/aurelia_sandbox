@@ -1,13 +1,14 @@
 import {inject, NewInstance} from 'aurelia-dependency-injection';
 import {ValidationRules, ValidationController} from "aurelia-validation";
-import {computedFrom} from "aurelia-framework";
+import {computedFrom, bindable} from "aurelia-framework";
 
 @inject(NewInstance.of(ValidationController))
 export class Login {
   validator;
-  validationMessages;
+  router;
   message: string = "Login";
 
+  @bindable
   name: String = '';
   password: String = '';
 
@@ -21,9 +22,15 @@ export class Login {
   }
 
   onSubmit() {
-    console.log(this.name);
+    let router = this.router;
     this.validator.validate().then(function(errors) {
-      console.info(errors);
+      if(errors.length === 0) {
+        router && router.navigate("home")
+      }
     })
+  }
+
+  activate(params, route, navigationInstruction): void {
+    this.router =  navigationInstruction.router;
   }
 }
