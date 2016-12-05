@@ -13,9 +13,10 @@ export function configure(aurelia: Aurelia) {
   aurelia.use
     .standardConfiguration()
     .feature('resources')
-    .plugin("aurelia-validation")
-    .globalResources("resources/elements/navigation.html")
-    .globalResources("resources/elements/custom-input.html");
+
+    .globalResources([
+      './resources/elements/grid/index'
+    ]);
 
   if (environment.debug) {
     aurelia.use.developmentLogging();

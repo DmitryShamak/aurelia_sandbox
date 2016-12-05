@@ -1,6 +1,25 @@
-<template>
-  <require from="bootstrap/css/bootstrap.css"></require>
-  <require from="./resources/styles/main.css"></require>
+<template class="adform-ui-v2">
+  <grid>
+    <grid-head>
+      <grid-row>
+        <grid-header sortable.bind="true" sorting-dir="desc" sorting-active.bind="true">Test</grid-header>
+        <grid-header sortable.bind="true">Test 1</grid-header>
+        <grid-header sortable.bind="true">Test 2</grid-header>
+      </grid-row>
+    </grid-head>
 
-  <router-view class="adform-ui-v2"></router-view>
+    <grid-body>
+      <grid-row>
+        <grid-col>1</grid-col>
+        <grid-col>2</grid-col>
+        <grid-col>3</grid-col>
+      </grid-row>
+
+      <grid-row>
+        <grid-col>1</grid-col>
+        <grid-col>2</grid-col>
+        <grid-col>3</grid-col>
+      </grid-row>
+    </grid-body>
+  </grid>
 </template>
